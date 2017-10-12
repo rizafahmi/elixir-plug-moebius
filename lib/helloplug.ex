@@ -1,18 +1,13 @@
 defmodule Helloplug do
-  @moduledoc """
-  Documentation for Helloplug.
-  """
+  def init(default_opts) do
+    IO.puts "starting up Helloplug..."
+    default_opts
+  end
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Helloplug.hello
-      :world
-
-  """
-  def hello do
-    :world
+  def call(conn, _opts) do
+    IO.puts "Saying hello..."
+    conn
+      |> Plug.Conn.put_resp_header("Server", "Plug")
+      |> Plug.Conn.send_resp(200, "Hello, Plug!")
   end
 end
