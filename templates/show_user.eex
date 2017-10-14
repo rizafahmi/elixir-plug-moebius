@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <h1>Show User</h1>
+  <p>Looks like you've requested information for the user with username: <%= username %>.</p>
+    <p>Also, 1 + 1 = <%= 1 + 1 %></p>
+    <%= if username == "0" do %>
+      <%# we should tell everybody that user 0 is really cool %>
+      User zero is really cool!
+    <% end %>
+</body>
+</html>
