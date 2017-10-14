@@ -6,7 +6,7 @@ defmodule Helloplug.Mixfile do
       app: :helloplug,
       version: "0.1.0",
       elixir: "~> 1.5",
-      start_permanent: Mix.env == :prod,
+      start_permanent: Mix.env() == :prod,
       deps: deps()
     ]
   end
@@ -14,7 +14,7 @@ defmodule Helloplug.Mixfile do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger, :sqlite_ecto, :ecto, :cowboy, :plug]
+      extra_applications: [:logger, :sqlite_ecto, :ecto, :cowboy, :plug, :moebius]
     ]
   end
 
@@ -24,7 +24,8 @@ defmodule Helloplug.Mixfile do
       {:cowboy, "~> 1.0.0"},
       {:plug, "~> 1.0"},
       {:sqlite_ecto, "~> 1.0.0"},
-      {:ecto, "~> 1.0"}
+      {:ecto, "~> 1.0"},
+      {:moebius, "~> 3.0.1"}
     ]
   end
 end

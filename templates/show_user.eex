@@ -5,12 +5,10 @@
   <title></title>
 </head>
 <body>
-  <h1>Show User</h1>
-  <p>Looks like you've requested information for the user with username: <%= username %>.</p>
-    <p>Also, 1 + 1 = <%= 1 + 1 %></p>
-    <%= if username == "0" do %>
-      <%# we should tell everybody that user 0 is really cool %>
-      User zero is really cool!
-    <% end %>
+  <h1><%= user.first_name %> <%= user.last_name %>'s page</h1>
+  <p>Looks like you've requested information for the user with id <%= user.id %>.</p>
+  <%= if user.first_name == "Fluffums" do %>
+    Also, let me just say that Fluffums is awesome.
+  <% end %>
 </body>
 </html>
