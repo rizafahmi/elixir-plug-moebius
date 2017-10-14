@@ -1,5 +1,7 @@
 defmodule Helloplug do
   use Router
+  require EEx
+  EEx.function_from_file :defp, :template_show_user, "templates/show_user.eex", [:username]
 
   # Routes
   # /hello
@@ -9,7 +11,7 @@ defmodule Helloplug do
 
   # /users/:username
   defp route("GET", ["users", username], conn) do
-    page_content = EEx.eval_file("templates/show_user.eex", [username: username])
+    page_content = template_show_user(username)
     conn
       |> Plug.Conn.put_resp_content_type("text/html") 
       |> Plug.Conn.send_resp(200, page_content)
