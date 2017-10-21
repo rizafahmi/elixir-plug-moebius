@@ -14,7 +14,8 @@ defmodule Helloplug.Mixfile do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger, :sqlite_ecto, :ecto, :cowboy, :plug, :moebius]
+      extra_applications: [:logger, :cowboy, :plug, :moebius],
+      mod: {Helloplug, []}
     ]
   end
 
@@ -23,8 +24,6 @@ defmodule Helloplug.Mixfile do
     [
       {:cowboy, "~> 1.0.0"},
       {:plug, "~> 1.0"},
-      {:sqlite_ecto, "~> 1.0.0"},
-      {:ecto, "~> 1.0"},
       {:moebius, "~> 3.0.1"}
     ]
   end

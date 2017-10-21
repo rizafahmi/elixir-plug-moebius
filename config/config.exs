@@ -1,5 +1,10 @@
 use Mix.Config
 
-config :helloplug, Helloplug.Repo,
-  adapter: Sqlite.Ecto,
-  database: "hello_plug.sqlite3"
+config :moebius,
+  connection: [
+    hostname: "localhost",
+    username: "postgres",
+    database: "helloplug_dev",
+    pool_mod: DBConnection.Poolboy
+  ],
+  scripts: "test/db"

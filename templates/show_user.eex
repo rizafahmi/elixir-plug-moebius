@@ -5,9 +5,9 @@
   <title></title>
 </head>
 <body>
-  <h1><%= user.first_name %> <%= user.last_name %>'s page</h1>
+  <h1><%= user.username %>'s page</h1>
   <p>Looks like you've requested information for the user with id <%= user.id %>.</p>
-  <%= if user.first_name == "Fluffums" do %>
+  <%= if user.username == "fluffums" do %>
     Also, let me just say that Fluffums is awesome.
   <% end %>
 </body>
